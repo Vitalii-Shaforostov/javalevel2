@@ -55,4 +55,11 @@ public class User {
         }
 
 
+
+//    // Deserialization
+//    public static User jsonToUser(String message){
+//        return gson.fromJson(message, ru.levelup.homework.hw1.User.class);
+//    }
+
+
     }

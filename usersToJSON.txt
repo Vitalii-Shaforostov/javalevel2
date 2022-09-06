@@ -1,0 +1,3 @@
+{"login":"Gosha","name":"Grigorii","age":20,"bonus":400}
+{"login":"Miha","name":"Michail","age":51,"bonus":1200}
+{"login":"strike","name":"Mila","age":25,"bonus":766}

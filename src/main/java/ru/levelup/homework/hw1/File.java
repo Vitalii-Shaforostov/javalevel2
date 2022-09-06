@@ -1,15 +1,11 @@
 package ru.levelup.homework.hw1;
 
-import ru.levelup.j2.Main;
-
 import java.io.*;
-import java.sql.Array;
-import java.util.Arrays;
-import java.util.List;
 
-public class ReadFile {
 
-    public static void readFile(String fileName) throws IOException {
+public class File {
+
+    public static void readAndWrite(String fileName) throws IOException {
         java.io.File file = new java.io.File(fileName);
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
@@ -20,7 +16,7 @@ public class ReadFile {
             ru.levelup.homework.hw1.User user = new User(lineSplit(line)[0], lineSplit(line)[1], Integer.parseInt(lineSplit(line)[2]), Integer.parseInt(lineSplit(line)[3]));
             String json = User.userToJson(user);
             System.out.println(json);
-            ReadFile.writeFile("./usersToJSON.txt", json);
+            File.write("./usersToJSON.txt", json);
         }
         br.close();
         fr.close();
@@ -28,13 +24,12 @@ public class ReadFile {
     }
 
     private static String[] lineSplit(String line) {
-        String[] splittedUser = line.split(",");
         //System.out.println(Integer.parseInt(splittedUser[2]));
-        return splittedUser;
+        return line.split(",");
     }
-    public static void writeFile(String fileName, String user) throws IOException {
+    public static void write(String fileName, String user) throws IOException {
 
-        File file = new File(fileName);
+       // File file = new File(fileName);
         FileWriter writer = new FileWriter(fileName, true);
 
         writer.write(user);

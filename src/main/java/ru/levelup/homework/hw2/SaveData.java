@@ -8,7 +8,8 @@ import java.util.List;
 
 public class SaveData {
     public static void writeToFile(String fileName, List<Double>  results) throws IOException {
-        Collections.sort(results);
+
+         Collections.sort(results);
         deleteFileifExists(fileName);
         writeResultsToFile(fileName, results);
     }

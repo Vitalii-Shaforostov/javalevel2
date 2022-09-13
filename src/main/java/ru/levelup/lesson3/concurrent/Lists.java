@@ -1,21 +1,18 @@
 package ru.levelup.lesson3.concurrent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Lists {
-        private static List<String> names = new ArrayList<>();
+        private static List<String> names = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) throws InterruptedException {
 
         for (int threadNumber = 0; threadNumber < 10; threadNumber++) {
             new Thread(() -> {
                 for (int i = 0; i < 1000; i++) {
-                    synchronized (names) {
+//                    synchronized (names) {
                         names.add("name - " + i);
-                    }
+ //                   }
                 }
 
             }).start();
